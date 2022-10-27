@@ -25,7 +25,7 @@ console.log(history)
                     {item.languageFrom}-{item.languageTo}
                   </td>
                   <td>{item.from}</td>
-                  <td>{/* {item.to} */}</td>
+                  <td>{item.to}</td>
                 </tr>
               );
             })}
