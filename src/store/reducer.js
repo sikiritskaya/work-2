@@ -1,17 +1,21 @@
-
-const reducer = (state = [], action) => {
+const initialState = {
+    words: [],
+  };
+  
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADDED_TRANSLATE':
             const newWord = action.payload;
             const newItem = {
-                num: 0,
                 languageFrom: newWord.languageFrom,
                 languageTo: newWord.languageTo,
                 from: newWord.from,
                 to: newWord.word
             }
+            console.log(newItem)
             return {
-                ...state, ...newItem
+                ...state,     
+                words:[ ...state.words, newItem]
             }
         default:
             return state

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const HistoryTranslate = () => {
-  const history = useSelector((state) => state);
+  const history = useSelector((state) => state.words);
 
   return (
     !!history && (
@@ -20,7 +20,7 @@ const HistoryTranslate = () => {
             {history.map((item, index) => {
               return (
                 <tr key={index}>
-                  <th scope="row">{item.num}</th>
+                  <th scope="row">{index}</th>
                   <td>
                     {item.languageFrom}-{item.languageTo}
                   </td>

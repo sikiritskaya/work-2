@@ -9,7 +9,7 @@ const TextTranslate = () => {
   const [option2, setOption2] = useState("");
   const [result, setResult] = useState("");
 
-  const history = useSelector((state) => state);
+  const history = useSelector((state) => state.words);
   console.log("state", history);
   const dispatch = useDispatch();
 
