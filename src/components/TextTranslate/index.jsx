@@ -34,10 +34,10 @@ const TextTranslate = () => {
         // dispatch(getWord(response.data.responseData.translatedText, text, option, option2))
         console.log(response.data.responseData.translatedText);
         setResult(response.data.responseData.translatedText);
-       
+        console.log("result", result);
         dispatch(getWord(response.data.responseData.translatedText, text, option, option2))
       });
-      //console.log("result", result);
+      
       //dispatch(getWord(result, text, option, option2))
   };
   return (

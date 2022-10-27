@@ -20,7 +20,7 @@ const HistoryTranslate = () => {
             {history.map((item, index) => {
               return (
                 <tr key={index}>
-                  <th scope="row">{index}</th>
+                  <th scope="row">{index+1}</th>
                   <td>
                     {item.languageFrom}-{item.languageTo}
                   </td>
