@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import getWord from "../../store/action";
 
 const TextTranslate = () => {
@@ -9,8 +9,6 @@ const TextTranslate = () => {
   const [option2, setOption2] = useState("");
   const [result, setResult] = useState("");
 
-  const history = useSelector((state) => state.words);
-  console.log("state", history);
   const dispatch = useDispatch();
 
   const addText = (e) => {
@@ -25,21 +23,19 @@ const TextTranslate = () => {
     setOption2(e.target.value);
   };
 
-  const translate = async() => {
-    await axios
+  const translate = () => {
+    axios
       .get(
         `https://api.mymemory.translated.net/get?q=${text}&langpair=${option}|${option2}`
       )
       .then((response) => {
-        // dispatch(getWord(response.data.responseData.translatedText, text, option, option2))
-        console.log(response.data.responseData.translatedText);
         setResult(response.data.responseData.translatedText);
         console.log("result", result);
-        dispatch(getWord(response.data.responseData.translatedText, text, option, option2))
+        // dispatch(getWord(response.data.responseData.translatedText, text, option, option2))
       });
-      
-      //dispatch(getWord(result, text, option, option2))
+    dispatch(getWord(result, text, option, option2));
   };
+  
   return (
     <>
       <h1>React Translate App</h1>

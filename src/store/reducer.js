@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
                 languageFrom: newWord.languageFrom,
                 languageTo: newWord.languageTo,
                 from: newWord.from,
-                to: newWord.word
+                to: newWord.to
             }
             console.log(newItem)
             return {

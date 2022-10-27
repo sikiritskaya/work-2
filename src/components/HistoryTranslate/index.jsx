@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const HistoryTranslate = () => {
   const history = useSelector((state) => state.words);
-
+console.log(history)
   return (
     !!history && (
       <>
